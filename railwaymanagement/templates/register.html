@@ -1,0 +1,59 @@
+{% extends "base.html"%}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+    <form action="" method = 'post' autocomplete="off" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label>Passenger Name</label>
+    {{ form.pass_name}}
+    <br>
+    <br>
+    <label>Email id</label>
+    {{ form.email}}
+    <br>
+    <br>
+    <label>Date of departure</label>
+    {{ form.dateofdeparture}}
+    <br>
+    <br>
+    <label>Destination</label>
+    {{ form.destination}}
+    <br>
+    <br>
+    <label>Choose Class</label>
+    {{form.carr}}
+    <br>
+    <br>
+    <label>Passenger Address</label>
+    {{ form.pass_address}}
+    <br>
+    <br>
+    <label>Gender</label>
+    {{ form.gender}}
+    <br>
+    <br>
+    <label>Food Required</label>
+    {{ form.foodreqd}}
+    <label>Railway Pass Concession Required</label>
+    {{ form.railwaypasscon}}
+    <br>
+    <br>
+    <label>Upload Aadhar Card</label>
+    {{ form.aadhar}}
+    <br>
+    <br>
+    <label>Baggage weight</label>
+    {{ form.bag_weight}}
+        <div class = 'row'>
+            <div class = 'col-md-8'>
+        <button type="submit" class="btn btn-success btn-block btn-lg"><i class=" fas fa-database"></i>Submit</button>
+            </div>
+            <div class="col-md-4">
+                <a href="{% url 'railwaybooking:passenger_show' %}" class="btn btn-secondary btn-block btn-lg">
+                    <i class = 'fas fa-stream'></i>Show list
+                </a>
+            </div>
+        </div>
+    </form>
+{% endblock content %}
